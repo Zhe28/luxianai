@@ -1,0 +1,16 @@
+{
+  "name": "luxianai",
+  "version": "0.0.1",
+  "description": "路线Ai",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "electron",
+    "pc"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
