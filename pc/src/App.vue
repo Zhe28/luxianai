@@ -10,8 +10,6 @@ const appStore = useAppStore();
 // 监听地址栏变动
 const route = useRoute();
 watch(() => route.path, () => {
-  // const token = route.query.token;
-  // console.log(token);
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token');
   const openId = params.get('openid');
@@ -23,16 +21,15 @@ watch(() => route.path, () => {
     useLogin(token);
     // 含有token， 说明是微信登录，不再弹出登录框
     appStore.showLoginDialog = false
-
   }
 
 }, { immediate: true })
 </script>
 
 <template>
-  <div class="h-screen w-screen flex align-center justify-center">
+  <div class="h-screen w-screen flex flex-row justify-start">
     <app-left></app-left>
-    <router-view></router-view>
+    <router-view class="bg-green-500 h-screen w-full"></router-view>
   </div>
 
   <!-- 登录dialog -->

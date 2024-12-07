@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        home view 
+        wechat pay
     </div>
 </template>
 

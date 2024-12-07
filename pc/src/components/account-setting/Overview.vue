@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        home view 
+        overview
     </div>
 </template>
 

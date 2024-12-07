@@ -4,7 +4,8 @@
 
 <template>
     <div>
-        home view 
+        paypal pay
+        
     </div>
 </template>
 
