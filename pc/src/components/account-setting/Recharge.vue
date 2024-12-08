@@ -8,8 +8,9 @@ const packages = ref<PackageItem[]>([]);
 const showPayDialog = ref(false);
 const selectedPackage = ref<PackageItem | null>(null);
 const payType = ref({
-    type: '',
-    url: ''
+    type: 'wechat',
+    url: '',
+    status: ''
 }); // 支付方式：wechat 或 alipay
 const countdown = ref(600); // 10分钟倒计时
 let timer: NodeJS.Timeout | null = null;
