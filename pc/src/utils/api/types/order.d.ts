@@ -12,6 +12,28 @@ declare interface PackageItem {
     updateTime: string;     // 更新时间
 }
 
+declare interface IResponse<T> {
+    host: string | null;
+    code: number;
+    errorMessage: string;
+    data: T;
+}
+// 订单详情接口
+declare interface IOrderStatus{
+    "orderNo": string;
+    "userId": number;
+    "payment": number;
+    "paymentType": number;
+    "tokensPriceId": number;
+    "status": number; //  订单状态:0-已取消-10-未付款，20-已付款 30-交易关闭
+    "paymentTime": string;
+    "endTime": string;
+    "closeTime": string | null;
+    "createTime": string;
+    "updateTime": string;
+    "wxCodeUrl": string;
+}
+
 // API 响应的接口定义
 declare interface IPackageResponse {
     host: string | null;
@@ -26,7 +48,7 @@ declare interface PaymentResponse {
     errorMessage: string;
     data: {
         codeUrl: string;
-        orderNo: number;
+        orderNo: string;
     };
 }
 
@@ -36,27 +58,4 @@ declare enum OrderStatus {
     Unpaid = 10,
     Paid = 20,
     Closed = 30
-}
-
-// 订单详情接口
-declare interface OrderDetail {
-    orderNo: number;
-    userId: number;
-    payment: number;
-    paymentType: number;
-    tokensPriceId: number;
-    status: OrderStatus;
-    paymentTime: string;
-    endTime: string;
-    closeTime: string | null;
-    createTime: string;
-    updateTime: string;
-    wxCodeUrl: string;
-}
-
-declare interface IOrderResponse {
-    host: null;
-    code: number;
-    errorMessage: string;
-    data: OrderDetail;
 }

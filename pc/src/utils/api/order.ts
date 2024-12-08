@@ -10,10 +10,11 @@ export function wxPayment(data: number) {
     return http.get<PaymentResponse>(`/api/xlx-sso/wxpay/native?tokensPriceId=${data}`)
 }
 // 支付套餐pc端口支付宝二维码支付
-export function paypalPayment(data: number) {
+export function aliPayment(data: number) {
     return http.get<PaymentResponse>(`/api/xlx-sso/alipay/scanPay?tokensPriceId=${data}`)
-} 
+}
 
-export function getTokenOrder(orderNo: string){
-    return http.get<IOrderResponse>(`/api/xlx-sso/tokensOrder/get?orderNo=${orderNo}`)
+// 查询订单
+export function queryOrder(orderNo: string) {
+    return http.get<IResponse<IOrderStatus>>(`/api/xlx-sso/tokensOrder/get?orderNo=${orderNo}`)
 }
