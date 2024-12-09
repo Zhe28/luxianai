@@ -2,12 +2,7 @@ declare interface IGetLoginParam {
     host: string | null;
     code: number;
     errorMessage: string;
-    data: {
-        redirectUri: string;
-        appid: string;
-        scope: string;
-        state: string;
-    };
+    data: ;
 }
 
 declare interface IUserInfo {
@@ -26,4 +21,18 @@ declare interface IUserInfoRes {
     errorMessage: string;
     data: IUserInfo;
     host: null | undefined | any;
+}
+
+declare interface IBindWechat {
+    code: string;
+    encryptedData: string;
+    iv: string;
+    signature: string;
+}
+
+declare interface IWechatDate {
+    redirectUri: string;
+    appid: string;
+    scope: string;
+    state: string;
 }

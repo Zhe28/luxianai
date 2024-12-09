@@ -8,3 +8,7 @@ export const getWechatLoginParam = () => {
 export const getUserInfo = () => {
     return http.post<IUserInfoRes>('/api/xlx-sso/user/getInfo')
 }
+
+export function bindWechat(data: IBindWechat) {
+    return http.post<IResponse<IWechatDate>>('/api/xlx-sso/oauth/wechat/getLoginParam', data)
+}
