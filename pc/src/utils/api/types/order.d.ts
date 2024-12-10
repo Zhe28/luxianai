@@ -15,7 +15,7 @@ declare interface PackageItem {
 declare interface IResponse<T> {
     host: string | null;
     code: number;
-    errorMessage: string;
+    errorMessage: string; // 提示信息
     data: T;
 }
 
@@ -85,3 +85,15 @@ declare enum OrderStatus {
     Paid = 20,
     Closed = 30
 }
+
+// 验证码登录
+declare interface ILogin{
+    "user": {
+      "created": string|null,//创建时间
+      "updated": string|null,//更新时间
+      "id": number,
+      "mobile": string,//用户手机号
+      "password": string | null
+    },
+    "token": string //token
+  }

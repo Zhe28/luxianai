@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useLogin } from '@/hooks/useLogin';
+import { useAppStore } from '@/stores/useAppStore';
 import { getImageCode, loginVerification, verifyImageCode } from '@/utils/api/login';
 import { computed, reactive, ref } from 'vue';
 
@@ -96,6 +97,8 @@ async function loginHandler() {
     if (res.code === 0) {
         useLogin(res.data.token);
     }
+
+    useAppStore().showLoginDialog = false
 }
 </script>
 

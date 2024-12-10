@@ -45,7 +45,6 @@ import { ref, onMounted, onUnmounted } from "vue";
 import ChatIcon from "./icons/ChatIcon.vue";
 import SmartChatIcon from "./icons/SmartChatIcon.vue";
 import UserIcon from "./icons/UserIcon.vue";
-import PracticeIcon from "./icons/PracticeIcon.vue";
 import securityIcon from "./icons/security.vue"
 import { useAppStore } from "@/stores/useAppStore";
 import { useUserStore } from "@/stores/useUserStore";

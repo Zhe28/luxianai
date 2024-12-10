@@ -28,4 +28,6 @@ export function loginVerification(phone: string, verificationCode: string, passw
 }
 
 // 密码登录
-// export function 
+export function login(mobile: string , password: string){
+    return http.post<IResponse<ILogin>>('/api/xlx-sso/user/login', { password, mobile })
+}
