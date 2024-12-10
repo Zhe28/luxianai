@@ -18,8 +18,34 @@ declare interface IResponse<T> {
     errorMessage: string;
     data: T;
 }
+
+// 图片验证码
+declare interface IImageCode {
+    bigWidth: number;
+    bigHeight: number;
+    bigImageBase64: string;
+    bigImage: null;
+    posY: number;
+    posX: number;
+    smallWidth: number;
+    smallHeight: number;
+    smallImageBase64: string;
+    smallImage: null;
+}
+
+// 验证码登录
+declare interface ILoginVerification{
+    token: string; 
+    isNew: boolean
+}
+// 验证图像
+declare type IVerifyImageCode = boolean
+
+// 手机验证码
+declare type IPhoneCode = null
+
 // 订单详情接口
-declare interface IOrderStatus{
+declare interface IOrderStatus {
     "orderNo": string;
     "userId": number;
     "payment": number;

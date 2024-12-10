@@ -17,7 +17,7 @@
       </div>
       <!-- 登录状态 -->
       <div class="login-btn flex flex-row justify-center items-center relative" ref="loginBtnRef"
-        @click.stop="btnLoginHandler">
+        @click="btnLoginHandler">
         <!-- 未登录 -->
         <div v-if="!token">
           <span class="icon"></span>
@@ -76,6 +76,7 @@ function btnLoginHandler() {
 
 /** 账号设置 */
 function accountSettingsHandler() {
+  showLoginList.value = false
   router.push({
     path: '/account-settings',
     query: {
@@ -89,6 +90,7 @@ function accountSettingsHandler() {
  * @returns {void}
  */
 function logoutHandler() {
+  showLoginList.value = true
   userStore.logout();
   router.push('/');
 }
