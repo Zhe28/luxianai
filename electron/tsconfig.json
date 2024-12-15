@@ -1,4 +1,32 @@
 {
   "files": [],
-  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.web.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.web.json"
+    }
+  ],
+  "include": [
+    "../shared/**/*",
+    "../pc/src/**/*"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@renderer/*": [
+        "src/renderer/src/*"
+      ],
+      "@shared-components/*": [
+        "../shared/components/*"
+      ],
+      "@shared/*": [
+        "../shared/*"
+      ],
+      "@/*": [
+        "../pc/src/*"
+      ]
+    }
+  }
 }

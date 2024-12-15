@@ -42,22 +42,24 @@ function handleTabChange(tabKey: string) {
             账号设置
         </h1>
         <div class="rounded-lg border-2 border-red-500 p-1 text-red-500">禁止发送色情、暴力、政治等敏感信息！违者封号！</div>
-
-
         <!-- 导航标签 -->
-        <div class="nav-tabs">
+        <el-tabs v-model="activeTab" @table-click="handleTabChange">
+            <el-tab-pane v-for="tab in navTabs" :key="tab.key" :label="tab.label" :name="tab.key">
+                <!-- 内容区域 -->
+                <keep-alive class="tab-content">
+                    <component :is="tab.component" />
+                </keep-alive>
+            </el-tab-pane>
+        </el-tabs>
+        <!-- <div class="nav-tabs">
             <span v-for="tab in navTabs" :key="tab.key" :class="['nav-tab', { active: activeTab === tab.key }]"
                 @click="activeTab = tab.key">
                 <button class="bg-sky-500 p-2 rounded mr-5 text-white">{{ tab.label }}</button>
             </span>
-        </div>
+        </div> -->
 
 
 
-        <!-- 内容区域 -->
-        <keep-alive class="tab-content">
-            <component :is="navTabs.find(tab => tab.key === activeTab)?.component" />
-        </keep-alive>
     </div>
 </template>
 

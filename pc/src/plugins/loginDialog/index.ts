@@ -1,9 +1,6 @@
 import { type Plugin } from "vue"
 import { type App, createApp, onMounted } from "vue";
 import LoginDialog from "./LoginDialog.vue";
-import { blog } from "@shared/utils/tools";
-import { useLoginDialogHook } from "./hooks";
-
 
 export const loginDialogPlugin = (): Plugin => {
     let dialogInstance: App<Element> | null = null;

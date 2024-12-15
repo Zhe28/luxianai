@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { getWechatLoginParam } from '@/utils/api/login'
+import axios from "axios";
 
 let wxELement: HTMLScriptElement | null = null
-onMounted(() => {
+onMounted(async () => {
+
+    // 加载微信登录js
     if (!wxELement) {
         wxELement = document.createElement('script');
         wxELement.src = 'https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js';

@@ -6,3 +6,22 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare global{
+  interface Window {
+    ipcMain: any
+  }
+  interface globalThis{ 
+    ipcMain: any
+  }
+}
+
+
+interface ImportMetaEnv {
+  readonly RENDERER_VITE_TARGET: string
+  // more env variables...
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}

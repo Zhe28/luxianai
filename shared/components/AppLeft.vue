@@ -19,23 +19,28 @@
       <div class="login-btn flex flex-row justify-center items-center relative" ref="loginBtnRef"
         @click="btnLoginHandler">
         <!-- 未登录 -->
-        <div v-if="!token">
+        <div v-if="!useUserStore().token">
           <span class="icon"></span>
           <span>登录</span>
         </div>
         <!-- 已登陆 -->
-        <div v-else class="flex flex-row flex-nowrap">
-          <span class="avatar"><img class="rounded-lg w-6" :src="userStore.userInfo?.logo" alt="" />
-          </span>
-          <span>{{ userStore.userInfo?.nickName }}</span>
-          <dialog class="login-list" :open="showLoginList">
-            <div class="settings" @click="accountSettingsHandler">账号设置</div>
-            <div class="exit" @click="logoutHandler">退出</div>
-          </dialog>
-        </div>
+        <el-popover v-else v-model="showLoginList" placement="right" >
+          <template #reference>
+            <div class="flex flex-row justify-center items-center">
+              <span class="avatar"><img class="rounded-lg w-6" :src="userStore.userInfo?.logo" alt="" />
+              </span>
+
+              <span class="text-nowrap">{{ userStore.userInfo?.nickName }}</span>
+            </div>
+          </template>
+          <el-button class="settings" @click="accountSettingsHandler">账号设置</el-button>
+          <el-button class="exit" @click="logoutHandler">退出</el-button>
+        </el-popover>
       </div>
     </div>
   </div>
+
+
 </template>
 
 <script setup lang="ts">
@@ -49,6 +54,9 @@ import securityIcon from "./icons/security.vue"
 import { useAppStore } from "@/stores/useAppStore";
 import { useUserStore } from "@/stores/useUserStore";
 import { useRouter } from "vue-router";
+
+
+const appStore = useAppStore();
 
 const menuItems = [
   {
@@ -66,11 +74,11 @@ const menuItems = [
 ]
 
 function btnLoginHandler() {
-  if (token) {
+  if (userStore.token) {
     return showLoginList.value = true
   }
-  const showLoginDialog = useAppStore().showLoginDialog;
-  useAppStore().showLoginDialog = !showLoginDialog;
+  const showLoginDialog = appStore.showLoginDialog;
+  appStore.showLoginDialog = !showLoginDialog;
 }
 
 /** 账号设置 */

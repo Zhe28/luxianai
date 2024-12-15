@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import AppLeft from '@shared-components/AppLeft.vue'
-import { useAppStore } from './stores/useAppStore'
+import { useAppStore } from '@/stores/useAppStore'
 import { watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { useLogin } from './hooks/useLogin';
-
+import { useLogin } from '@/hooks/useLogin';
+import LoginDialog from '@/plugins/loginDialog/LoginDialog.vue';
 const appStore = useAppStore();
 
 // 监听地址栏变动
@@ -33,9 +33,10 @@ watch(() => route.path, () => {
   </div>
 
   <!-- 登录dialog -->
-  <Teleport to="body" v-if="appStore.showLoginDialog">
-    <LoginDialog></LoginDialog>
-  </Teleport>
+
+  <el-dialog v-model="appStore.showLoginDialog" width="35%" style="min-width: 480px;" :append-to-body="true">
+     <login-dialog></login-dialog>
+  </el-dialog>
 </template>
 
 <style scoped></style>

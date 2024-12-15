@@ -5,8 +5,8 @@ import { login } from '@/utils/api/login';
 import { reactive } from 'vue';
 
 const form = reactive({
-    username: '',
-    password: '',
+    username: '15639646277',
+    password: '123456',
 })
 
 async function loginHandler() {
@@ -29,7 +29,7 @@ async function loginHandler() {
             <el-input v-model="form.username" placeholder="请输入用户名" />
         </el-form-item>
         <el-form-item>
-            <el-input v-model="form.password" placeholder="请输入密码" />
+            <el-input v-model="form.password" placeholder="请输入密码" @keydown.enter="loginHandler" />
         </el-form-item>
         <el-form-item>
             <el-button type="primary" @click="loginHandler">登录</el-button>

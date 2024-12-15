@@ -36,11 +36,11 @@ function changeLoginMode(item: tTableItem, index: number) {
 </script>
 
 <template>
-    <div class="modal-backdrop fixed top-0 z-100 left-0 bottom-0 right-0 bg-black opacity-75">
+<!--     <div class="modal-backdrop fixed top-0 z-100 left-0 bottom-0 right-0 bg-black opacity-75">
 
-    </div>
-    <div class="login fixed top-1/2 left-1/2 bg-white z-200 height-auto box-border  ">
-        <div class="exit" @click="useAppStore().showLoginDialog = false">关闭</div>
+    </div> -->
+    <div class="login bg-white z-200 height-auto box-border">
+        <!-- <div class="exit" @click="useAppStore().showLoginDialog = false">关闭</div> -->
         <ul class="loginTypes">
             <li v-for="(item, index) in menu" :key="item.label" @click="changeLoginMode(item, index)"
                 :class="{ active: comp === item.comp }">
@@ -56,8 +56,8 @@ function changeLoginMode(item: tTableItem, index: number) {
 <style lang="scss" scoped>
 .login {
     width: 457px;
+    line-height: 115px;
     padding: 25px 39px 30px 40px;
-    transform: translate(-50%, -50%);
 
     .exit {
         width: 100%;
