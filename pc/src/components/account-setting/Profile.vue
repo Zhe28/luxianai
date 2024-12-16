@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        account
+        <el-button type="primary">检查更新</el-button>
     </div>
 </template>
 

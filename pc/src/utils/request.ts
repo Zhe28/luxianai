@@ -1,5 +1,5 @@
 import { useUserStore } from "@/stores/useUserStore"
-import axios, { Axios, type AxiosResponse } from "axios"
+import axios, {  type AxiosResponse } from "axios"
 
 
 // 创建 axios 对象

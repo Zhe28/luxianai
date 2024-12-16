@@ -1,6 +1,6 @@
-import { defineStore } from "pinia"
+// import { defineStore } from "pinia"
 
-const useAppLeftStore = defineStore('appLeft', () => {
+// const useAppLeftStore = defineStore('appLeft', () => {
 
-    return {}
-}, { persist: true })
+//     return {}
+// }, { persist: true })

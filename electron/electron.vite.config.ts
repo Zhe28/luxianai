@@ -4,6 +4,8 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Component from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+
 // https://vitejs.dev/config/
 export default defineConfig({
   main: {
@@ -30,14 +32,15 @@ export default defineConfig({
   renderer: {
     base: './',
     build: {
-      target: 'chrome'
+      target: ['chrome131']
     },
     resolve: {
       alias: {
-        '@': resolve(__dirname, '..', 'pc', 'src'),
-        '@renderer': resolve(__dirname, 'src', 'renderer', 'src'),
-        '@shared': resolve(__dirname, '..', 'shared'),
-        '@shared-components': resolve(__dirname, '..', 'shared', 'components')
+        '@': resolve('..', 'pc', 'src'),
+        '@renderer': resolve('src', 'renderer', 'src'),
+        '@shared': resolve('..', 'shared'),
+        '@shared-components': resolve('..', 'shared', 'components'),
+        '@shared-utils': resolve('..', 'shared', 'utils')
       }
     },
     plugins: [vue()],
@@ -49,6 +52,11 @@ export default defineConfig({
           rewrite: (path) => path.replace(/^\/api/, ''),
           ws: true
         }
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: { api: 'modern-compiler' }
       }
     }
   }

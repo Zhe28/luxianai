@@ -1,3 +1,5 @@
 provider: generic
-url: https://example.com/auto-updates
-updaterCacheDirName: electron-updater
+url: https://hzer.fun/release/
+# url: https://oss.xuexiluxian.cn/xiaoluxian-crm/releases
+#url: https://oss.xuexiluxian.cn/xiaoluxian-crm/releases
+updaterCacheDirName: release

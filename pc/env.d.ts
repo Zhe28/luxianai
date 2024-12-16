@@ -1,4 +1,6 @@
 /// <reference types="vite/client" />
+import * as electron from 'electron'
+
 declare module '*.vue' {
   import type { DefineComponent } from 'vue'
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
@@ -7,11 +9,12 @@ declare module '*.vue' {
 }
 
 export interface IElectronAPI {
-  loadPreferences: () => Promise<void>,
+  loadPreferences: () => electron,
 }
 
 declare global {
   interface Window {
+    WxLogin: any,
     electronAPI: IElectronAPI,
     electron: any,
     ipcRenderer: {

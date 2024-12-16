@@ -1,3 +1,14 @@
-import pino from 'pino'
+// ./utils/logger.ts
+import { pino } from 'pino'
 
-export const logger = pino;
+const logger = pino({
+  name: 'electron',
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true
+    }
+  }
+})
+
+export { logger }

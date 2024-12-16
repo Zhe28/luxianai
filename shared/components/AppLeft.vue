@@ -24,7 +24,7 @@
           <span>登录</span>
         </div>
         <!-- 已登陆 -->
-        <el-popover v-else v-model="showLoginList" placement="right" >
+        <el-popover v-else v-model="showLoginList" placement="right">
           <template #reference>
             <div class="flex flex-row justify-center items-center">
               <span class="avatar"><img class="rounded-lg w-6" :src="userStore.userInfo?.logo" alt="" />
@@ -75,7 +75,8 @@ const menuItems = [
 
 function btnLoginHandler() {
   if (userStore.token) {
-    return showLoginList.value = true
+    showLoginList.value = true
+    // return true
   }
   const showLoginDialog = appStore.showLoginDialog;
   appStore.showLoginDialog = !showLoginDialog;
@@ -105,7 +106,7 @@ function logoutHandler() {
 const router = useRouter();
 const showLoginList = ref(false);
 const userStore = useUserStore();
-const token = userStore.token;
+// const token = userStore.token;
 const loginBtnRef = ref<HTMLElement | null>(null);
 
 // 点击其他地方关闭下拉菜单

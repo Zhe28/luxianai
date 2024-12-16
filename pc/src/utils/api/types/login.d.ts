@@ -2,7 +2,7 @@ declare interface IGetLoginParam {
     host: string | null;
     code: number;
     errorMessage: string;
-    data: ;
+    data: any;
 }
 
 declare interface IUserInfo {

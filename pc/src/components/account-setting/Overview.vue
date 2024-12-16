@@ -2,7 +2,7 @@
 import { useUserStore } from '@/stores/useUserStore';
 import { ref } from 'vue'
 
-const userAvatar = ref('/path/to/default/avatar.png')
+// const userAvatar = ref('/path/to/default/avatar.png')
 const wechatStatus = ref('已绑定')
 const wechatBound = ref(true)
 const phoneNumber = ref('')

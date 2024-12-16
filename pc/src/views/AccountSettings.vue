@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { markRaw, ref, type Component } from 'vue';
+import { markRaw, ref } from 'vue';
 import Account from '@/components/account-setting/Profile.vue';
 import Recharge from '@/components/account-setting/Recharge.vue';
 import Overview from '@/components/account-setting/Overview.vue';

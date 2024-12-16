@@ -12,10 +12,10 @@ const route = useRoute();
 watch(() => route.path, () => {
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token');
-  const openId = params.get('openid');
-  const isPhone = params.get('isPhone');
-  const type = params.get('type');
-  const name = params.get('name');
+  // const openId = params.get('openid');
+  // const isPhone = params.get('isPhone');
+  // const type = params.get('type');
+  // const name = params.get('name');
 
   if (token) {
     useLogin(token);

@@ -10,7 +10,7 @@ const packages = ref<PackageItem[]>([])
 // 支付弹窗显示状态
 const showPayDialog = ref(false)
 // 当前选择的套餐包
-const selectedPackage = ref<PackageItem | null>(null)
+// const selectedPackage = ref<PackageItem | null>(null)
 // 支付方式：wechat 或 alipay
 const payType = ref<'wechat' | 'alipay'>('wechat')
 // 加载状态

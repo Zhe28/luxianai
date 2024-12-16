@@ -2,7 +2,6 @@
 import Password from "@/components/login/Password.vue";
 import Phone from '@/components/login/Phone.vue';
 import Wechat from '@/components/login/Wechat.vue';
-import { useAppStore } from "@/stores/useAppStore";
 import { markRaw, ref, type Component } from 'vue';
 
 type tTableItem = {
@@ -30,6 +29,7 @@ const comp = ref(menu[0].comp);
 
 
 function changeLoginMode(item: tTableItem, index: number) {
+    index;
     comp.value = item.comp;
 }
 

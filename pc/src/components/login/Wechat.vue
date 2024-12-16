@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { getWechatLoginParam } from '@/utils/api/login'
-import axios from "axios";
 
 let wxELement: HTMLScriptElement | null = null
 onMounted(async () => {

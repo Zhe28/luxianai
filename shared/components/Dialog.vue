@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, defineProps, defineEmits } from 'vue';
+import {  defineProps, defineEmits } from 'vue';
 
-const props = defineProps({
+defineProps({
   visible: Boolean,
   title: String
 });
